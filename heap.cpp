@@ -1,7 +1,7 @@
 #include <bits/stdc++.h> 
 using namespace std;
 
-
+//MAX-heap
 void upheapify(vector<int>&arr,int index)
 {
     int parent=(index-1)/2;
