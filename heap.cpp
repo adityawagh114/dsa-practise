@@ -2,7 +2,7 @@
 using namespace std;
 
 //MAX-heap
-void upheapify(vector<int>&arr,int index)
+ void upheapify(vector<int>&arr,int index)
 {
     int parent=(index-1)/2;
     if(index==0)
@@ -19,18 +19,19 @@ void downheapify(vector<int>&arr,int index)
     int c1=2*index+1,c2=2*index+2;
     if(c1>=arr.size() && c2>=arr.size())
     return;
-    
     if(c1>=arr.size())
     {
         if(arr[c2]>arr[index])
-        {swap(arr[c2],arr[index]);downheapify(arr,c2);}
-        
+        {swap(arr[c2],arr[index]);downheapify(arr,c2);return;}
+        else
+            return;
     }
     if(c2>=arr.size())
-    {
+    {   
         if(arr[c1]>arr[index])
-        {swap(arr[c1],arr[index]);downheapify(arr,c1);}
-        
+        {swap(arr[c1],arr[index]);downheapify(arr,c1);return;}
+        else
+            return;
     }
     
     
